@@ -1,19 +1,19 @@
-package test.com.gfi.advantures.hero;
+package test.com.gfi.adventures.hero;
 
-import com.gfi.advantures.hero.AdvantureMap;
-import com.gfi.advantures.hero.Hero;
+import com.gfi.adventures.hero.AdventureMap;
+import com.gfi.adventures.hero.Hero;
 import org.junit.Test;
 
 import java.io.File;
 
 import static org.junit.Assert.*;
 
-public class TestAdvantureMap {
+public class TestAdventureMap {
 
     @Test
     public void shouldOpenMap(){
 
-        final AdvantureMap map = new AdvantureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
+        final AdventureMap map = new AdventureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
         assertNotNull(map.getMapFile());
         assertFalse(map.getMapFile().isEmpty());
 
@@ -21,7 +21,7 @@ public class TestAdvantureMap {
 
     @Test
     public void shouldDefineFirst() {
-        final AdvantureMap map = new AdvantureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
+        final AdventureMap map = new AdventureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
         Hero hero = map.createHero();
         assertEquals(0, hero.getLine());
         assertEquals(3, hero.getColumn());
@@ -29,7 +29,7 @@ public class TestAdvantureMap {
 
     @Test
     public void shouldMoveTheHero() {
-        final AdvantureMap map = new AdvantureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
+        final AdventureMap map = new AdventureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
         Hero hero = map.createHero();
         assertEquals(0, hero.getLine());
         assertEquals(3, hero.getColumn());
@@ -51,7 +51,7 @@ public class TestAdvantureMap {
 
         final String MOVIMENT_2 = "9.6\r\nOONOOOSSO";
 
-        final AdvantureMap map = new AdvantureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
+        final AdventureMap map = new AdventureMap(new File(ClassLoader.getSystemResource("card.txt").getFile()));
         Hero hero = map.createHero();
         hero = map.move(hero, MOVIMENT_2);
 

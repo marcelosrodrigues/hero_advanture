@@ -1,14 +1,14 @@
-package com.gfi.advantures.hero;
+package com.gfi.adventures.hero;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdvantureMap {
+public class AdventureMap {
 
     private List<byte[]> map = new ArrayList<>();
 
-    public AdvantureMap(File mapFile) {
+    public AdventureMap(File mapFile) {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(mapFile))) {
             String linha = null;

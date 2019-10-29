@@ -1,4 +1,4 @@
-package com.gfi.advantures.hero;
+package com.gfi.adventures.hero;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +12,7 @@ public class HeroApplication {
         String map = args[0];
         String movimentFile = args[1];
 
-        AdvantureMap advantureMap = new AdvantureMap(new File(map));
+        AdventureMap advantureMap = new AdventureMap(new File(map));
         Hero hero = advantureMap.createHero();
         StringBuffer moviment = new StringBuffer();
         try( BufferedReader reader = new BufferedReader(new FileReader(new File(movimentFile))) ) {
